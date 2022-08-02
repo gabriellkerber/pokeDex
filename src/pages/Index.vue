@@ -37,7 +37,8 @@ export default {
       name:'',
       url:'',
       search: '1',
-      id:null
+      id:null,
+
     }
   },
 
@@ -48,7 +49,7 @@ export default {
   methods:{
     getPokemon(id) {
       api
-      .get(id > 0 ? `/pokemon/${id}/`: `/pokemon/${this.search}/`)
+      .get(id > 0 ? `/pokemon/${id}/`: `/pokemon/${this.search.toLowerCase()}/`)
       .then((response) => {
       // handle success
       this.id = response.data.id;
